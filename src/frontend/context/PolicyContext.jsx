@@ -3,6 +3,7 @@ import { api } from '../utils/api.js';
 
 const PolicyContext = createContext(null);
 
+
 export function PolicyProvider({ children }) {
   const [data, setData] = useState({ products: [], users: [], policies: [], claims: [], notifications: [] });
   const [loading, setLoading] = useState(true);
