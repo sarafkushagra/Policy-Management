@@ -10,6 +10,7 @@ export function AuthProvider({ children }) {
   });
   const [authError, setAuthError] = useState('');
 
+  
   useEffect(() => {
     const token = localStorage.getItem('trustbridge_token');
     if (!token || user) return;
