@@ -5,6 +5,8 @@ A Spring Boot insurance policy lifecycle prototype. It covers product comparison
 ## Run
 
 ```bash
+npm install
+npm run build
 mvn spring-boot:run
 ```
 
@@ -12,12 +14,19 @@ Open `http://localhost:3000`.
 
 ## Demo Flow
 
-1. Browse Life, Health, and Vehicle products.
-2. Calculate a premium using age, coverage, risk score, prior claims, and tenure.
-3. Complete proposal/KYC details and issue a policy.
-4. Open the generated policy certificate with a unique policy number and QR-style verification mark.
-5. File a claim from the customer dashboard.
-6. Use the Admin view to move the claim through `Submitted -> Verified -> Approved -> Disbursed`, or reject it.
+1. Open the public site and review Home, Products, About, Testimonials, and Contact pages.
+2. Sign in with a role account.
+3. As a policyholder, calculate premium, buy a policy, download the certificate, and file a claim.
+4. As an underwriter/admin, review platform metrics and create new products.
+5. As a claims adjuster, verify evidence and move claims through `Submitted -> Verified -> Approved -> Disbursed`, or reject them.
+
+## Demo Accounts
+
+| Role | Email | Password |
+| --- | --- | --- |
+| Policyholder | `aarav@example.com` | `user123` |
+| Underwriter / Admin | `admin@example.com` | `admin123` |
+| Claims Adjuster | `claims@example.com` | `claims123` |
 
 ## Architecture
 
@@ -27,7 +36,8 @@ Open `http://localhost:3000`.
 - `service/ClaimService.java`: State-machine style claim transitions.
 - `service/RenewalScheduler.java`: Scheduled renewal reminder sweep.
 - `service/PdfCertificateService.java`: Auto-generated PDF policy certificate.
-- `src/main/resources/static`: Browser UI served by Spring Boot.
+- `src/frontend`: React frontend with routed pages and reusable components.
+- `src/main/resources/static`: Built React assets served by Spring Boot.
 
 ## ER Diagram
 
