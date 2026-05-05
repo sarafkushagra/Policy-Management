@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { usePolicyData } from '../context/PolicyContext.jsx';
 
+
 export default function PortalLayout() {
   const { user, logout } = useAuth();
   const { data, loading, error } = usePolicyData();
