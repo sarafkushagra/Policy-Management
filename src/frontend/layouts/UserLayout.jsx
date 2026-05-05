@@ -2,7 +2,6 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import Footer from '../components/Footer.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 
-
 export default function MarketingLayout() {
   const { user } = useAuth();
   return (
